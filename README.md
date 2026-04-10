@@ -54,7 +54,7 @@ All bindings use the root table (`bind -n`). These do not interefere with your s
 | `M-"` | split vertical | `C-b "` |
 | `M-%` | split horizontal | `C-b %` |
 | `M-!` | break pane | `C-b !` |
-| `M-x` | kill pane (confirm) | `C-b x` |
+| `M-x` | kill pane | `C-b x` |
 | `M-z` | zoom/unzoom | `C-b z` |
 | `M-o` | next pane | `C-b o` |
 | `M-;` | last pane | `C-b ;` |
