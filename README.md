@@ -20,16 +20,6 @@ other native tmux keybindings are alsso ssupported
 
 ## Install
 
-### TPM
-
-Add to your `tmux.conf`:
-
-```
-set -g @plugin 'eduardofuncao/altux'
-```
-
-Press `prefix + I` to install.
-
 ### Manual
 
 ```sh
@@ -41,6 +31,38 @@ Then in your `tmux.conf`:
 
 ```
 source-file ~/.config/tmux/altux.conf
+```
+
+### TPM
+
+Add to your `tmux.conf`:
+
+```
+set -g @plugin 'eduardofuncao/altux'
+```
+
+Press `prefix + I` to install.
+
+### NixOS
+
+```nix
+programs.tmux = {
+  enable = true;
+  plugins = [
+    {
+      plugin = pkgs.tmuxPlugins.mkTmuxPlugin {
+        pluginName = "altux";
+        version = "0.1.0-beta";
+        src = pkgs.fetchFromGitHub {
+          owner = "eduardofuncao";
+          repo = "altux";
+          rev = "main";
+          hash = "";  # first build fails, replace with correct hash
+        };
+      };
+    }
+  ];
+};
 ```
 
 ## Bindings
